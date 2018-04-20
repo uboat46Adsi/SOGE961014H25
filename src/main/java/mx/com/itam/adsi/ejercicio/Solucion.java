@@ -64,7 +64,7 @@ public class Solucion {
          */
         void prn() {
             System.out.print(this.data);
-            System.out.print('-->');
+            System.out.print("-->");
             this.next.prn();
         }
         
