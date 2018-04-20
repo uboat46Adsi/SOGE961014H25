@@ -32,7 +32,7 @@ public class TestPrincipal {
         assertTrue("Prn test of '"+val+"':", build(val));
     }
     
-    private boolean build(res) {
+    private boolean build(String res) {
         Node test = p.build();
         System.out.println(test.prn());
         return res == test.prn();
