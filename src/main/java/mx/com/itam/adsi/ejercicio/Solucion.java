@@ -85,7 +85,8 @@ public class Solucion {
     }
 
     public static void main(String...argv) {
-        Solucion sol = new Solucion().ok();
+        Solucion sol = new Solucion();
+        sol.ok();
     }
 
 }
