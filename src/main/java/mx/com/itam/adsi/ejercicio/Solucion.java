@@ -1,6 +1,6 @@
-package a.b.c.d.e.f;
+package mx.com.itam.adsi.ejercicio;
 
-public class solu {
+public class Solucion {
     class Node {
         String data;
         Node next;
@@ -85,7 +85,7 @@ public class solu {
     }
 
     public static void main(String...argv) {
-        new Solucion().ok();
+        Solucion sol = new Solucion().ok();
     }
 
 }
