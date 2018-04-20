@@ -65,7 +65,9 @@ public class Solucion {
         void prn() {
             System.out.print(this.data);
             System.out.print("-->");
-            this.next.prn();
+            if(this.next != null) {
+                this.next.prn();
+            }
         }
         
     }// ends Node class
