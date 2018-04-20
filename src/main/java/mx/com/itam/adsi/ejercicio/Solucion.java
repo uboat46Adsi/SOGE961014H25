@@ -1,21 +1,50 @@
 package mx.com.itam.adsi.ejercicio;
 
+/** Represents a Solucion for adsi´s exam.
+* @version 1.0.1
+* @since 1.0
+*/
 public class Solucion {
+    /** Represents a Node.
+    * @version 1.0.1
+    * @since 1.0
+    */
     class Node {
         String data;
         Node next;
         
-        Node(String data) {
+        /** Creates a Node with the specified data.
+        * @param data The Node’s data.
+        */
+        public Node (String data) {
             this.data = data;
+            this.next = null;
         }
         
-        Node gus() {
-            if(next == null) return this;
-            Node otro = next;
-            next      = null;
-            Node tavo = otro.gus();
-            otro.next = this;
-            return tavo;
+        /**
+         * Rotates a sequence of concatenated Nodes.
+         * In example:
+         * 
+         * Having the next nodes
+         *  A-->B-->C-->D-->E-->F-->
+         * 
+         * Calling
+         * A.gus() would make this nodes have the next structure
+         *  F-->E-->D-->C-->B-->A-->
+         *        
+         */
+        private Node gus() {
+            Node next, nextsChild;
+            
+            if(this.next == null) {
+                return this;
+            }
+
+            next = this.next;
+            this.next = null;
+            nextsChild = next.gus();//returns the last Node;
+            next.next = this;//rotate sequence
+            return nextsChild;
         }
       
         /**
@@ -34,7 +63,9 @@ public class Solucion {
          *         
          */
         void prn() {
-            // Este mÃ©todo requiere sÃ³lo de 3 a 7 lineas de cÃ³digo para funcionar correctamente
+            System.out.print(this.data);
+            System.out.print('-->');
+            this.next.prn();
         }
         
     }// ends Node class
