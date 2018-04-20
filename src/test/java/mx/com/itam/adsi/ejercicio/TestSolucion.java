@@ -33,9 +33,8 @@ public class TestSolucion {
     }
     
     private boolean build(String res) {
-        Node test = p.build();
-        System.out.println(test.prn());
-        return res == test.prn();
+        System.out.println(p.build().prn());
+        return res == p.build().prn();
     }
 
     @After
